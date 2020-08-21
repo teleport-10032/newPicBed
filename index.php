@@ -17,6 +17,20 @@
 					<h1>
 						简易自建图床 <small>Beta</small>
 					</h1>
+                    <ul>
+                        <li>
+                            <?php
+                            include 'user_judger.php';
+                            if(isset($_SESSION["user"]))
+                            {
+
+                                echo "以".$_SESSION["user"]."身份登录,";
+                                echo "<a href='list'>查看图片列表</a>,";
+                                echo "<a href='login/login_out.php'>登出</a>";
+                            }
+                            ?>
+                        </li>
+                    </ul>
 				</div>
 			</div>
 		</div>

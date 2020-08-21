@@ -8,6 +8,7 @@
         <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
         <script src="../js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="../css/demo.css"/>
+        <script src="../js/clipboard.min.js"></script>
     </head>
     <body>
     <div class="container">
@@ -31,7 +32,7 @@
                     </tr>
                     </thead>
                 <?php
-
+                include '../user_judger.php';
                 $dir = iconv("UTF-8", "GBK", "../pic");
                 $handler = opendir($dir);
                 while (($filename = readdir($handler)) !== false)
@@ -51,7 +52,6 @@
 //                        echo $value."<br>";
                         $link = "http://picbed.k423.tech/pic/".$value;
                         $bz = substr($value , 0 ,15);
-                        echo "<input type='hidden' id='linkk' value='$link'>";
                         echo "
                                  <tbody>
                     <tr>
@@ -62,23 +62,46 @@
                             <img src='../pic/$value' style='width:40px;height: 25px'>
                         </td>
                         <td>
-                            $link
+                            <span  onclick='copyContent(this);' title='Copy'>
+                                $link
+                           </span>
                         </td>
                         <td>
-                            <button type='button' class='btn btn-primary' onclick='copyUrl()'>复制外链</button>   
-                            <button type='button' class='btn btn-danger' id='con'>删除</button>
+                        <a href='../delete.php?link=$value'>
+                          <button type='button' class='btn btn-danger'>删除</button>
+                        </a>
                         </td>
                     </tr>
                         ";
                     }
-
-//                    echo $value, PHP_EOL;
                 }
                 ?>
                     </tbody>
+
                 </table>
+                <hr>
+                <h1>点击链接以复制</h1>
+                <br>
+                <span>当前剪贴板的内容如下：</span>
+                <input id="copy_content" type="text" class="form-control" readonly/>
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        function copyContent(ElementObj){
+            //获取点击的值
+            var clickContent = ElementObj.innerText;
+            //获取要赋值的input的元素
+            var inputElement =  document.getElementById("copy_content");
+            //给input框赋值
+            inputElement.value = clickContent;
+            //选中input框的内容
+            inputElement.select();
+            // 执行浏览器复制命令
+            document.execCommand("Copy");
+            //提示已复制
+            alter('已复制');
+        }
+    </script>
     </body>
     </html>
