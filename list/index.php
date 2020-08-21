@@ -12,6 +12,12 @@
     </head>
     <body>
     <div class="container">
+
+        <div style="height: 10px"></div>
+        <a href="/">
+            <button class="btn btn-success" >Back</button>
+        </a>
+        <div style="height: 10px"></div>
         <div class="row clearfix">
             <div class="col-md-12 column">
                 <table class="table table-condensed table-striped">
