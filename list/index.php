@@ -47,31 +47,37 @@
                 foreach ($files as  $value)
                 {
                     $frist = substr( $value, 0, 1 );
-                    if($frist != '.')
+                    $end = substr($value,15,1);
+                    if($frist != '.' && $end == '.')
                     {
 //                        echo $value."<br>";
                         $link = "http://picbed.k423.tech/pic/".$value;
+
+                        //取出文件名和扩展名
                         $bz = substr($value , 0 ,15);
-                        echo "
-                                 <tbody>
-                    <tr>
-                        <td>
-                            $bz
-                        </td>
-                        <td>
-                            <img src='../pic/$value' style='width:40px;height: 25px'>
-                        </td>
-                        <td>
-                            <span  onclick='copyContent(this);' title='Copy'>
-                                $link
-                           </span>
-                        </td>
-                        <td>
-                        <a href='../delete.php?link=$value'>
-                          <button type='button' class='btn btn-danger'>删除</button>
-                        </a>
-                        </td>
-                    </tr>
+                        $len = strlen($value);
+                        $kzm = substr($value,16,$len-16);
+                        $new_name = $bz."_small".".".$kzm;
+                        echo "<tbody>
+                        <tr>
+                            <td>
+                                $bz
+                            </td>
+                            <td>
+                                <img src='../pic/$new_name' style='width:40px;height: 25px'>
+                            </td>
+                            <td>
+                                <span  onclick='copyContent(this);' title='Copy'>
+                                    $link
+     
+                               </span>
+                            </td>
+                            <td>
+                            <a href='../delete.php?link=$value'>
+                              <button type='button' class='btn btn-danger'>删除</button>
+                            </a>
+                            </td>
+                        </tr>
                         ";
                     }
                 }
