@@ -2,7 +2,7 @@
 
 用户需要更改的位置:
 
-* 1.
+1.
 
   /list/index.php 
 
@@ -12,7 +12,7 @@
   $link = "http://******/pic/".$value;
   ```
 
-* 2.
+2.
 
   /login/fun.php
 
