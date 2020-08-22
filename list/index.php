@@ -57,7 +57,7 @@
                     if($frist != '.' && $end == '.')
                     {
 //                        echo $value."<br>";
-                        $link = "http://picbed.k423.tech/pic/".$value;
+                        $link = "http://******/pic/".$value;
 
                         //取出文件名和扩展名
                         $bz = substr($value , 0 ,15);
