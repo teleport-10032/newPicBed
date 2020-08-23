@@ -9,6 +9,7 @@
         <script src="../js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="../css/demo.css"/>
         <script src="../js/clipboard.min.js"></script>
+        <link rel="shortcut icon" href="../favicon.ico"/>
     </head>
     <body>
     <div class="container">
