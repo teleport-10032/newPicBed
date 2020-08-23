@@ -21,3 +21,7 @@
   ```
   if($account="******" && $passwd="*******")
   ```
+
+* 3.
+  /favicon.ico
+  更改ico
