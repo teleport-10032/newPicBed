@@ -8,7 +8,7 @@
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="../js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/demo.css"/>
-    <link rel="shortcut icon" href="../favicon.ico"/>
+	<link rel="Shortcut Icon" href="/img/favicon.ico" type="image/x-icon" />
 </head>
 <?php
 session_start();

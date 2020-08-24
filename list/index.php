@@ -6,11 +6,15 @@
         <!-- 新 Bootstrap 核心 CSS 文件 -->
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    	<link rel="Shortcut Icon" href="/img/favicon.ico" type="image/x-icon" />
         <script src="../js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="../css/demo.css"/>
         <script src="../js/clipboard.min.js"></script>
-        <link rel="shortcut icon" href="../favicon.ico"/>
     </head>
+
+    <?php
+    date_default_timezone_set('Asia/Shanghai');
+    ?>
     <body>
     <div class="container">
 
@@ -32,6 +36,9 @@
                         </th>
                         <th>
                             外链
+                        </th>
+                        <th>
+                            创建时间
                         </th>
                         <th>
                             操作
@@ -58,13 +65,14 @@
                     if($frist != '.' && $end == '.')
                     {
 //                        echo $value."<br>";
-                        $link = "http://******/pic/".$value;
+                        $link = "******".$value;
 
                         //取出文件名和扩展名
                         $bz = substr($value , 0 ,15);
                         $len = strlen($value);
                         $kzm = substr($value,16,$len-16);
                         $new_name = $bz."_small".".".$kzm;
+                        $time =  date ("F d Y H:i:s", filemtime("../pic/".$value));
                         echo "<tbody>
                         <tr>
                             <td>
@@ -80,7 +88,10 @@
                                </span>
                             </td>
                             <td>
-                            <a href='../delete.php?link=$value'>
+                                $time
+                            </td>
+                            <td>
+                            <a href='../delete.php?link=$value&link_small=$new_name'>
                               <button type='button' class='btn btn-danger'>删除</button>
                             </a>
                             </td>

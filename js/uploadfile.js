@@ -31,7 +31,7 @@
 				demoHtml +=  			'<div class="file_sel">';
 				demoHtml +=					'<div class="file_input">';
 				demoHtml +=						'<div class="sel_file_img">';
-				demoHtml +=							'<span><img src="../img/add_img.png"/></span>';
+				demoHtml +=							'<span><img src="img/add_img.png"/></span>';
 				demoHtml +=						'</div>';
 				demoHtml +=						'<div class="sel_file_btn">';
 				demoHtml +=							'<input type="file"/>';
@@ -52,8 +52,7 @@
 				demoHtml +=				'</div>';
 				demoHtml +=				'<div class="file_show">';
 				demoHtml +=				'</div>';
-			}
-			else{
+			}else{
 				setting.height < 50 && (setting.height = 50);
 				$(item).addClass('noDrag');
 				demoHtml +=		'<div class="file_info_handle">';

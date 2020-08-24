@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>图床测试</title>
+	<title>图床测试</title> 
+	<link rel="shortcut icon" href="favicon.ico"/>
 	<!-- 新 Bootstrap 核心 CSS 文件 -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 	<script src="js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/demo.css"/>
-    <link rel="shortcut icon" href="favicon.ico"/>
+
 </head>
 <body>
 	<div class="container">
