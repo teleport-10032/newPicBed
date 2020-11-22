@@ -25,3 +25,5 @@
 * 3.
   /favicon.ico
   更改网站ico
+
+停更中
